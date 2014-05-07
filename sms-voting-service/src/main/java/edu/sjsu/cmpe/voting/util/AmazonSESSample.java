@@ -48,7 +48,7 @@ public class AmazonSESSample {
             System.out.println("Attempting to send an email through Amazon SES by using the AWS SDK for Java...");
         
             // Instantiate an Amazon SES client, which will make the service call with the supplied AWS credentials.
-            AmazonSimpleEmailServiceClient client = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials("AKIAJJEK57VNVVV6Y7JQ", "0FvP9zi7TJaWWbMfcELZ7g3tYE09oBFNQxaDv7Ah"));
+            AmazonSimpleEmailServiceClient client = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials("", ""));
                
             // Choose the AWS region of the Amazon SES endpoint you want to connect to. Note that your production 
             // access status, sending limits, and Amazon SES identity-related settings are specific to a given 
