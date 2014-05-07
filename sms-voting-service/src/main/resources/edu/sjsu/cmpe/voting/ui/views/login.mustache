@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html]]>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -32,89 +32,73 @@
           <!-- FB integration SDK -->
         
         <div id="fb-root"></div>
-				<script type="text/<span class="><!--mce:0--></script>
-				<script>
-				window.fbAsyncInit = function() {
-				  FB.init({appId: '627796963977885', status: true, cookie: true, xfbml: true});
-				};
-				(function() {
-				  var e = document.createElement('script');
-				  e.type = 'text/javascript';
-				  e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-				  e.async = true;
-				  document.getElementById('fb-root').appendChild(e);
-				}());
-				</script>
-				        
-				<fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>  
-				      <script>
-				      	FB.Event.subscribe('auth.login', function(response) {
-				  		login();
-						});
-				FB.Event.subscribe('auth.logout', function(response) {
-				  logout();
-				});
-				FB.getLoginStatus(function(response) {
-				  if (response.session) {
-				      greet();
-				  }
-				});
-				
-				function login(){
-					var email = "";
-					var userName  = "";
-				  var  showMe = function(response) {
-					alert("in showMe");
-					   if (response.status !== 'connected') {
-					                div.innerHTML = '<em>Not Connected</em>';
-					   } else {
-					       FB.api('/me', function(response) {
-					       for (var key in response) {
-					       		if(key=='email'){
-					               email = response[key];
-					               alert(key+" : "+email);
-					               sessionStorage.setItem("username", email);
-					       		}
-					       		if(key=='name'){
-					       			userName = response[key];
-					       			alert(key+" : "+userName);
-					       		}
-					       	}
-					     });
-					   }
-					 };
-					  alert('You have successfully logged in, '+response.name+"!");
-					  
-					  <!-- for creatuing the user for FB! -->
-					  
-					  jQuery.ajax({
-						type: "POST",
-						url: "http://ec2-54-193-13-149.us-west-1.compute.amazonaws.com:8080/sms-voting/v1/polls/createUser",
-						contentType: "application/json",
-						dataType: "json",
-						data: JSON.stringify({
-							"user_id": email,
-							"name": userName
-						}),
-						success:function (data) {
-							alert("success");
-							document.location.href="login";
-						},
-						failure: function () {
-							alert("failed");
-						}
-					});
-					  
-				  
-				}
-				function logout(){
-				  alert('You have successfully logged out!');
-				}
-				function greet(){
-				  FB.api('/me', function(response) {
-				      alert('Welcome, '+response.name+"!");
-				  });
-				}
+<script type="text/<span class="><!--mce:0--></script>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({appId: '627796963977885', status: true, cookie: true, xfbml: true});
+};
+(function() {
+  var e = document.createElement('script');
+  e.type = 'text/javascript';
+  e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+  e.async = true;
+  document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+        
+<fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>  
+	<div id="me"></div>
+      <script>
+
+var div = document.getElementById('me'),  
+
+
+ showMe = function(response) {
+alert("in showMe");
+  if (response.status !== 'connected') {
+                div.innerHTML = '<em>Not Connected</em>';
+  } else {
+      FB.api('/me', function(response) {
+      for (var key in response) {
+      if(key=='email'){
+              email = response[key];
+              alert(key+" : "+email);
+              sessionStorage.setItem("username", email);
+      }
+      if(key=='name'){
+      userName = response[key];
+      alert(key+" : "+userName);
+      }
+      }
+    });
+  }
+};
+
+  
+  <!-- for creatuing the user for FB! -->
+FB.getloginStatus(function(response) {
+  showMe(response);
+  FB.Event.subscribe('auth.authResponseChange', showMe);
+});
+
+FB.Event.subscribe('auth.logout', function(response) {
+  logout();
+});
+FB.getLoginStatus(function(response) {
+  if (response.session) {
+      greet();
+  }
+});
+
+
+function logout(){
+  alert('You have successfully logged out!');
+}
+function greet(){
+  FB.api('/me', function(response) {
+      alert('Welcome, '+response.name+"!");
+  });
+}
         </script>   
           
           
@@ -134,8 +118,8 @@
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
-	  <div class="article">
-		 <form name="login">
+  <div class="article">
+<form name="login">
         <div id="login" class="animate form">
             <form  action="mysuperscript.php" autocomplete="on">  
                  <h2>Login</h2> 
@@ -159,14 +143,14 @@
                 </p>
                 <p class="change_link">
                     Not a member yet ?<br/>
-					<a href="register"><span>Sign Up</span></a>
+<a href="register"><span>Sign Up</span></a>
                    
                 </p>
             
         </div>
-		</form>
+</form>
         </div>
-		</div>
+</div>
          
       </div>
        <div class="sidebar">
@@ -174,19 +158,19 @@
 
      
     
-	
-	<div>
-	<br/>
-	<br/>
+
+<div>
+<br/>
+<br/>
 
 
 </div>
-		
-		
-		<div class="article">
+
+
+<div class="article">
           
         </div>
-		
+
         <div class="gadget">
       
           
@@ -197,7 +181,7 @@
  <div class="fbg">
     <div class="fbg_resize">
       
-	   <div class="clr"></div>
+  <div class="clr"></div>
     </div>
       <div class="clr"></div>
     </div>
@@ -207,7 +191,7 @@
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="//code.jquery.com/jquery.js"></script>
             <!-- Latest compiled and minified JavaScript -->
-			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../../assets/js/login.js"></script>
 
 </body>

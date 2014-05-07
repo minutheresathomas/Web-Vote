@@ -29,7 +29,8 @@ public class UserDBRepository implements UserDBRepositoryInterface {
 		
 		public UserDBRepository() throws UnknownHostException
 		{
-			mongoClient = new MongoClient();
+			mongoClient = new MongoClient("localhost",27017);
+			//mongoClient = new MongoClient("ec2-54-193-13-149.us-west-1.compute.amazonaws.com",27017);
 			db = mongoClient.getDB("sms-voting");
 			collection = db.getCollection("polls");
 			collection1 = db.getCollection("users");
